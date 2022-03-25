@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/to-do-app-with-localstorage/static/css/main.7328ca78.css",
+    "main.js": "/to-do-app-with-localstorage/static/js/main.d726128e.js",
+    "index.html": "/to-do-app-with-localstorage/index.html",
+    "main.7328ca78.css.map": "/to-do-app-with-localstorage/static/css/main.7328ca78.css.map",
+    "main.d726128e.js.map": "/to-do-app-with-localstorage/static/js/main.d726128e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7328ca78.css",
+    "static/js/main.d726128e.js"
+  ]
+}
