@@ -24,7 +24,7 @@ const Todo = () => {
   const [Data, setData] = useState(getLocalData());
   const addItem = () => {
     if (!inputData) {
-      alert("plz fill the data.");
+      alert("Please enter task.");
     } else if (inputData && toggleBtn) {
       setData(
         Data.map((cele) => {
@@ -66,6 +66,13 @@ const Todo = () => {
     SetToggleBnt(true);
   };
 
+  const handleRemoveAll = () => {
+    setData([]);
+    setInputData("");
+    SetToggleBnt(false);
+    SetEditId(null);
+  }
+
   // adding localstorage
   useEffect(() => {
     localStorage.setItem("mytodolist", JSON.stringify(Data));
@@ -73,9 +80,9 @@ const Todo = () => {
 
   return (
     <>
-      <div className="container-md ">
+      <div className="container-md">
         <div className="container-fluid d-flex justify-content-center align-items-center flex-wrap">
-          <Card sx={{ maxWidth: 500 }} className="main-box">
+          <Card sx={{ maxWidth: 600 }} className="main-box">
             <div className="container">
               <figure>
                 <img src={img1} alt="logo" className="logo-img"></img>
@@ -86,7 +93,7 @@ const Todo = () => {
               <div className="input-groups">
                 <input
                   type="text"
-                  placeholder="add list here"
+                  placeholder="Add list here"
                   required
                   name="item"
                   id="item"
@@ -106,11 +113,13 @@ const Todo = () => {
                       <a
                         className="list-group-item list-group-item-action"
                         key={id}
+                        href="#"
                       >
+                        <span className="px-3">{id + 1}</span>
                         {cele.name}
                         <span className="icon-box">
                           <span
-                            className="icon1"
+                            className="icon1 px-2"
                             onClick={() => {
                               editItem(cele.id);
                             }}
@@ -135,9 +144,7 @@ const Todo = () => {
                 <Button
                   variant="outlined"
                   className="btn3"
-                  onClick={() => {
-                    setData([]);
-                  }}
+                  onClick={handleRemoveAll}
                 >
                   Remove All
                 </Button>

@@ -9,12 +9,15 @@
 }
 .container {
   padding: 10px 10px;
+  display: block;
 }
 .container-md {
   min-height: 84vh;
+  
 }
 .main-box {
   margin: 10px;
+  min-width: 500px !important;
 }
 .logo-img {
   width: 100px;
@@ -31,6 +34,15 @@
   font-size: 25px;
   font-weight: bold;
 }
+
+.input-groups{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .input-groups > input {
   border: 1px solid #ebebeb;
   outline: none;
@@ -42,9 +54,9 @@
 }
 
 .input-groups > button {
-  padding: 8px 0px;
-  margin-top: -5px !important;
+   padding: 8px 5px;
 }
+
 /* icon */
 .icon-box {
   float: right;
