@@ -24,7 +24,7 @@ const Todo = () => {
   const [Data, setData] = useState(getLocalData());
   const addItem = () => {
     if (!inputData) {
-      alert("plz fill the data.");
+      alert("Please enter task.");
     } else if (inputData && toggleBtn) {
       setData(
         Data.map((cele) => {
@@ -137,6 +137,9 @@ const Todo = () => {
                   className="btn3"
                   onClick={() => {
                     setData([]);
+                    setInputData("");
+                    SetToggleBnt(false);
+                    SetEditId(null);
                   }}
                 >
                   Remove All
